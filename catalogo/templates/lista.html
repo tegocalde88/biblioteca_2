@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Biblioteca</title>
+</head>
+<body>
+<h1>Biblioteca</h1>
+{% for item in libros %}
+<div>
+<h3>{{ item.libro.titulo }}</h3>
+<p>{{ item.libro.autor }}</p>
+{% if item.reservado %}
+<p style="color:red">
+Libro reservado
+</p>
+
+{% else %}
+
+<a href="/reservar/{{ item.libro.id }}">
+Reservar libro
+</a>
+
+{% endif %}
+
+</div>
+
+<hr>
+
+{% endfor %}
+
+
+</body>
+
+</html>
